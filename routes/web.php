@@ -14,9 +14,7 @@ use App\Http\Controllers;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->middleware(['auth'])
+Route::get('/', Controllers\PostIndexController::class)->middleware(['auth'])
 ->name('posts.index');
 Route::get('/create', function () {
     return view('posts.create');

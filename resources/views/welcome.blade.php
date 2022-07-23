@@ -1,6 +1,6 @@
 <x-app-layout>
     <ul class="posts_list">
-        @forelse (Auth::user()->posts()->latest()->get() as $post)
+        @forelse ($posts as $post)
             <li>
                 <span class="shoku">{{$post->shoku}}</span>
                 <span class="kyoku">{{$post->kyoku}}</span>

@@ -5,13 +5,17 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
-                </div>
-            </div>
-        </div>
-    </div>
+    <ul class="posts_list">
+        @forelse (Auth::user()->posts()->latest()->get() as $post)
+            <li>
+                <span class="shoku">{{$post->shoku}}</span>
+                <span class="kyoku">{{$post->kyoku}}</span>
+                <span class="yoku">{{$post->yoku}}</span><br>
+                <span class="shiku">{{$post->shiku}}</span>
+                <span class="kekku">{{$post->kekku}}</span>
+            </li>
+        @empty
+            <li>空っぽ！</li>
+        @endforelse
+    </ul>
 </x-app-layout>
