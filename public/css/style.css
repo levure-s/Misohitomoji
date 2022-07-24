@@ -167,3 +167,47 @@ a {
 .error {
     color: #f9034f;
 }
+.right-navi {
+    align-items: center;
+}
+.user-serch {
+    margin-right: 10px;
+    padding: 1.5em;
+}
+.link-serch {
+    position: relative;
+}
+.link-serch::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border: solid 3px #fff;
+    border-radius: 50%;
+}
+.link-serch::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 9px;
+    height: 3px;
+    width: 10px;
+    border-top: solid 3px #fff;
+    border-radius: 10px;
+    transform: rotate(45deg);
+}
+.serch-area {
+    text-align: right;
+    padding: 2em 1em;
+}
+.serch-area input {
+    margin-bottom: 1em;
+}
+.result-area {
+    padding: 1em;
+}
+.result-area li {
+    padding-bottom: 1em;
+}

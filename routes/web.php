@@ -16,11 +16,15 @@ use App\Http\Controllers;
 
 Route::get('/', Controllers\PostIndexController::class)->middleware(['auth'])
 ->name('posts.index');
-Route::get('/create', function () {
-    return view('posts.create');
-})->middleware(['auth']);
-Route::post('/store/{id}', Controllers\PostStoreController::class)
+Route::post('/store', Controllers\PostStoreController::class)
 ->name('post.store');
+Route::get('/serch', Controllers\UserShowSerchController::class)
+->name('user.serch');
+Route::post('/serch', Controllers\UserSerchController::class)
+->name('serch.result');
+Route::get('/show/{user}', Controllers\UserShowController::class)
+->name('user.show')
+->where('user','[0-9]+');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
